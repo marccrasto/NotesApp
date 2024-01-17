@@ -1,0 +1,124 @@
+/*Import using @import. Here we have imported a font.*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+/*Change applies to all elements*/
+* {
+    box-sizing: border-box;
+}
+
+/*Change only applies to elements in the body of the html page*/
+body {
+    font-family: 'Comfortaa', sans-serif;
+    /*I had added a margin to ensure that the 'add note' button (when it moves to the right corner of the page when note pads are present)
+    doesn't touch the edge of the page*/
+    margin: 10;
+    /*Backrground color was obtained from the website 'https://cssgradient.io/gradient-backgrounds/'*/
+    background: #833ab4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*Set the display to flex in order for 'align items' and 'justify content' to take effect.
+    I also found out that display: flex turn the container into a flexbox. Think of it as items on a row and and you can move the items around
+    easily in that row.
+    */
+    display: flex;
+    /*flex-wrap: wrap, with regards to the application, pushes new note pads on to new rows. Our page is able to hold two note pads without
+    any spacing issue. The two note pads fit onto the first row fine. But once you add a third notepad, things get messy. The notepads start
+    to get squished in order to fit on the first row. But with flex-wrap: wrap, a new row is created an the third notepad is inserted into the
+    new row.*/
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+/*notes is the container that houses the notepad and its buttons (its contents and structure found in the linked javascript file).*/
+.notes {
+    width: 500px;
+    height: 400px;
+    background-color: whitesmoke;
+    /*I always used to get confused between margin and padding, but from what I understand, margin is where the content will actually start in
+    the container. Padding is extra width and height added around the container.*/
+    margin: 20px;
+    /*Creates a decent shadow effect around the container*/
+    box-shadow: 0 0 10px;
+}
+
+/*main is the text that will be displayed after the user has entered the text into the textarea (in markdown format). It will be displayed after
+the user has clicked on the edit button shown on the notepad (the user can toggle between the main container and the textarea container by clicking
+on the edit button as shown in the linked javascript file)*/
+.main {
+    height: 335.8px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.2rem;
+    background-color: white;
+}
+
+/*textarea is the container where the user will enter their notes in markdown format. */
+textarea {
+    /*This gets rid of the outline that is automatically displayed when you click on a textbox (or any container I believe)*/
+    outline: none;
+    border: none;
+    width: 100%;
+    /*Gets rid of the automatic margin applied at the top.*/
+    margin-top: 0;
+    font-family: inherit;
+    font-size: larger;
+    height: 335.8px;
+}
+
+/*Applies to the edit button and delete button in the tools container*/
+button {
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+/*tools is where the button are stored on the notes container. Kind of acts like the unofficial header of the notes container.*/
+.tools {
+    display: flex;
+    padding: 20px;
+    background: #FDFC47;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24FE41, #FDFC47);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24FE41, #FDFC47); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    justify-content: right;
+}
+
+/*Not specifically used for the notes container as a whole but rather main container and the textarea container (remember that the notes container
+is the parent container to main and textarea so all it's classes can be added to its child containers).*/
+.notes .hidden {
+    display: none;
+}
+
+/*Applies to the add button that you see at the center (when no notepads are present) and at the corner of the screen (when notepads are present)*/
+.add {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+    font-family: inherit;
+}
+
+/*Just though of adding a hover effect to indicate to the user that they are hovering over the button.*/
+.add:hover {
+    font-size: 3.2rem;
+}
+
+/*When notepads are added, move the button to the top right corner of the screen*/
+.side {
+    font-size: 2rem;
+    position: fixed;
+    right: 3rem;
+    top: 3rem;
+}
+
+/*Same hover effect applied when it's moved to the corner*/
+.side:hover {
+    font-size: 2.1rem;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Set the Title of the document-->
+    <title>Notes App</title>
+    <!--Set the stylesheet that will be referred to when building the page (in this case style.css)-->
+    <link rel="stylesheet" href="style.css">
+    <!--The stylesheet below is used to get the icons for the buttons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!--Set the script, 'defer' means to first parse the html page while downloading the javascript file in the background. That way the .js file could refer to the elements in the html file. The defer attribute is only for external scripts (should only be used if the src attribute is present).-->
+    <script src="script.js" defer></script>
+    <!--Another script will be using is from the link below which will enable us to create notes with the markdown format-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!--When you open the page, a button will be displayed at the center of the screen that will enable you to add a note pad-->
+    <button class="add">
+        <i class="fa-solid fa-plus"></i>
+    Add note</button>
+</body>
+</html>
